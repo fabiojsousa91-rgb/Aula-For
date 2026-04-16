@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input placeholder="Digite o nome do contato" />
+    <p></p>
+    <button onclick="search()">Procurar Contato</button>
+  
+  <script>
+    let p = document.querySelector("p");
+    let input = document.querySelector("input");
+
+    const contacts = [
+      { name: "Rodolfo", number: "(19) 93443-3434" },
+      { name: "Paulo", number: "(12) 93443-0215" },
+      { name: "Aline", number: "(13) 93443-1245" },
+      { name: "Maria", number: "(14) 93443-4747" },
+    ]
+
+function search() {
+
+  contacts.forEach((contact) => {
+    if(input.value.toLowerCase() === contact.name.toLowerCase()) {
+      p.innerHTML = "Contato encontrado Nome: " + contact.name + " Tel: " + contact.number
+
+    } else {
+      p.innerHTML = "Contato não encontrado, tente novamente"
+    }
+  });
+
+
+
+
+    // function search() {
+    //   let i = 0;
+
+// while (i < contacts.length) {
+//     i++;
+//     console.log(i)
+
+    
+//   if(input.value.toLowerCase() === contacts[i].name.toLowerCase()) {
+//     p.innerHTML = "Contato encontrado Nome: " + contacts[i].name + " Tel: " + contacts[i].number
+   
+    
+
+//     break
+
+    
+
+//   } else {
+//     p.innerHTML = "Contato não encontrado, tente novamente"
+//   }
+// }
+
+
+
+
+//     function search() {
+// for (const name of contacts) {
+//   if(input.value.toLowerCase() === name.name.toLowerCase()) {
+//     p.innerHTML = "Contato encontrado Nome: " + name.name + " Tel: " + name.number
+
+//     break
+//   } else {
+//     p.innerHTML = "Contato não encontrado, tente novamente"
+//   }
+// }
+
+
+      // for (let i = 0; i < contacts.length; i++){
+      //   if(input.value.toLowerCase() === contacts[i].name.toLowerCase()) {
+      //     p.innerHTML = "Contato encontrado Nome: " + contacts[i].name + " Tel: " + contacts[i].number
+
+      //     break
+      //   } else {
+      //     p.innerHTML = "Contato não encontrado, tente novamente"
+      //   }
+      // }
+    }
+  </script>
+  </body>
+</html>
